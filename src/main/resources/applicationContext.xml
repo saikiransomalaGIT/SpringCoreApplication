@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="studentInfo" class="com.slk.training.bean.StudentInfo">
+		<constructor-arg value = "kunal Kishor" /> 
+		<constructor-arg value = "CSE" /> 
+		<constructor-arg value = "kuna@gmail.com" /> 
+	</bean>
+
+	<bean id="htmlMessageWritter"
+		class="com.slk.training.writter.HTMLMessageWritter">
+
+	</bean>
+	
+	<bean id="textMessageWritter"
+		class="com.slk.training.writter.TextMessageWritter">
+
+	</bean>
+
+	<bean id="messagePrinter"
+		class="com.slk.training.printer.MessagePrinter">
+		<property name="msgWritter" ref="htmlMessageWritter" />
+	</bean>
+
+</beans>
